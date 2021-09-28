@@ -15,4 +15,4 @@ jobs:
     Step:
       - name: Now it is
         run: |
-          echo date
+          date
