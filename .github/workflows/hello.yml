@@ -12,7 +12,7 @@ jobs:
       - name: Say hello
         run: |
           echo "Hello World! -update"
-    Step:
+    steps:
       - name: Now it is
         run: |
-          date
+          date  
