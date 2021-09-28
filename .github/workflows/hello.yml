@@ -12,7 +12,6 @@ jobs:
       - name: Say hello
         run: |
           echo "Hello World! -update"
-    steps:
       - name: Now it is
         run: |
           date  
