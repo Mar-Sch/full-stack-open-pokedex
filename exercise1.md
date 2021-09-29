@@ -1,0 +1,6 @@
+Tools to support CI for C# language:
+For Linting and static analysis, the ReSharper seems to be commonly used and SonarQube can be used for static analysis on vulnerabilities.
+For testing, I would pick NUnit over XUnit as a test runner for unit tests. The framework can be extended by using restsharp nuget for testing API. For testing e2e I would extend the framework with playwright-sharp. For security testing according to OWASP, I would select ZAP to be integrated in the pipeline. I would investigate if snapshot testing with Snapper.Nunit would be beneficial, or otherwise some other form of visual testing with e.g. Applitools. I believe there is not a C# solution for performance testing, so I would stick with jMeter or Taurus.
+For building Nant can be used. 
+There are plenty of alternatives available. Bamboo is often mentioned, and since it’s developed by Atlassian, it might bring benefits when integrating it with Jira. It seems that the Bamboo will retire and replaced by Data Center Roadmap. Other alternatives are TeamCity from JetBrains, Circle CI, or GoCD 
+In this case I would select a cloud based solution. The team is small which probably means that the build in features are sufficient enough to support the generic setup.
