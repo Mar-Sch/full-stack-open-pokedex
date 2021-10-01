@@ -33,5 +33,6 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "nameless-thicket-27907"
           heroku_email: "marco_schaafsma@hotmail.com"
+          healthcheck: "https://nameless-thicket-27907.herokuapp.com/health"
 
 
