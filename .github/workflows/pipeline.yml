@@ -35,6 +35,8 @@ jobs:
         if: ${{ github.event_name == 'push' }}        
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BUMP: "patch"
+          WITH_V: true
           DRY_RUN: true
       - name: deploy to Heroku
         uses: akhileshns/heroku-deploy@v3.12.12
