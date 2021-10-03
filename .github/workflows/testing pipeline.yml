@@ -23,13 +23,5 @@ jobs:
           COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
         run: echo "$COMMIT_MESSAGES"
       - name: test if
-        if: contains( ${{ toJson(github.event.commits.*.message) }} , '#skip' )
-        run: echo hello, this is not working      
-      - name: get commit message
-        run: |
-           echo ::set-env name=commitmsg::$(git log --format=%B -n 1 ${{ github.event.after }})
-      - name: show commit message
-        run : echo $commitmsg
-      - name: step1
-        if: contains( env.commitmsg , 'try' )
+        if: ${{ github.event_name == 'push' && !contains(join(github.event.commits.*.message, ' '), '#skip') }}
         run: echo hello
