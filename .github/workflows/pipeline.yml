@@ -24,12 +24,12 @@ jobs:
         run: npm run test
       - name: build
         run: npm run build
-      #- name: e2e tests
-      #  uses: cypress-io/github-action@v2
-      #  with:
-      #    command: npm run test:e2e
-      #    start: npm run start
-      #    wait-on: http://localhost:5000
+      - name: e2e tests
+        uses: cypress-io/github-action@v2
+        with:
+          command: npm run test:e2e
+          start: npm run start
+          wait-on: http://localhost:5000
       - name: Bump version and push tag
         uses: anothrNick/github-tag-action@eca2b69f9e2c24be7decccd0f15fdb1ea5906598
         if: ${{ github.event_name == 'push' && !contains(join(github.event.commits.*.message, ' '), '#skip') }}
@@ -47,7 +47,7 @@ jobs:
           healthcheck: "https://nameless-thicket-27907.herokuapp.com/health"
           rollbackonhealthcheckfailed: true
       - name: action-slack
-        uses: 8398a7/action-slack@v3
+        uses: 8398a7/action-slack@v3.9.3
         with:
           status: ${{ job.status }}
           fields: repo,message,commit,author,action,eventName,ref,workflow,job,took # selectable (default: repo,message)
