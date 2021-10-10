@@ -11,7 +11,7 @@ jobs:
     steps:
     - name: Check the site
       id: hello
-      uses: srt32/uptime@master@958231f4d95c117f08eb0fc70907e80d0dfedf2b
+      uses: srt32/uptime@958231f4d95c117f08eb0fc70907e80d0dfedf2b
       with:
         url-to-hit: "https://example.com"
         expected-statuses: "200,301"
